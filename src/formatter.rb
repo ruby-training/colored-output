@@ -1,3 +1,5 @@
 class Formatter 
-    # empty
+    def format message, foreground, background
+        # empty
+    end
 end
