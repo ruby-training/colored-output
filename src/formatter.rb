@@ -28,6 +28,9 @@ class Formatter
         "light_gray" => "47"
     }
     def format message, foreground, background
-        # empty
+        colors = String.new
+        colors << "\033[#{@@foreground[foreground]}m" if foreground.is_a? String
+        colors << "\033[#{@@background[background]}m" if background.is_a? String
+        "#{colors}#{message}\033[0m"
     end
 end
